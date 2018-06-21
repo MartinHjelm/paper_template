@@ -1,39 +1,89 @@
-\documentclass[11pt]{amsart}
-\usepackage{geometry}                % See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   % ... or a4paper or a5paper or ... 
+% \documentclass[letterpaper, 10 pt, conference]{ieeeconf}
+\documentclass[a4paper, 10pt, conference]{ieeeconf}      
+\IEEEoverridecommandlockouts                              
+% This command is only needed if you want to  use the \thanks command
+\overrideIEEEmargins
 
-%% PACKAGES
-\usepackage{graphics} % for pdf, bitmapped graphics files
+% PACKAGES
+\usepackage[dvipsnames,HTML]{xcolor}
+% \usepackage[]{caption}
+\usepackage{subcaption}
+\captionsetup[subfigure]{skip=1.3pt}
+\DeclareCaptionSubType*[arabic]{figure}
+\usepackage{graphicx}
 \usepackage{epsfig} % for postscript graphics files
-%\usepackage{mathptmx} % assumes new font selection scheme installed
-\usepackage{times} % assumes new font selection scheme installed
-\usepackage{amsmath} 
-\usepackage{amssymb}  % assumes amsmath package installed
-\usepackage{subfig} % subfigure is deprecated, use subfig instead!! 
-\usepackage{url}
-\usepackage{setspace}
+\usepackage{amsmath, amssymb}
 \usepackage{multirow}
 \usepackage{array}
-\usepackage{subfloat}
 \usepackage{flushend}
 \usepackage{sidecap}
-\usepackage[]{graphicx}
 \usepackage{color}
-% \usepackage{newalg}
-\usepackage{soul}
-\usepackage[]{caption}
+\usepackage[normalem]{ulem}
+
+
+% Character encodings for bib file.s
+\DeclareUnicodeCharacter{0252}{\"u}
+\DeclareUnicodeCharacter{0246}{\"o}
+\DeclareUnicodeCharacter{0237}{\'\i}
+\DeclareUnicodeCharacter{0225}{\'a}
+
 \usepackage{verbatim}
 \usepackage{arydshln}
 \usepackage[parfill]{parskip}
+\usepackage[export]{adjustbox}
+% Math commands
+\def\*#1{\mathbf{#1}}
+\newcommand{\bm}[1]{\mathbf{#1}}
+
+\def\tightlist{} % Fixes pandoc conversion problem
+
+\overfullrule=1mm % For debugging overflows
 
 
-\title{Brief Article}
-\author{The Author}
-%\date{}                                           % Activate to display a given date or no date
+%% REFERENCE PACKAGES
+\usepackage[
+    style=ieee,
+    hyperref=true,
+    backend=biber,
+    sortlocale=de_DE,
+    natbib=true,
+    backref=true,
+    url=true,
+    doi=true,
+    eprint=false,
+    sorting=nyt,
+    % giveinits=true,
+    maxcitenames=10, 
+    ]{biblatex}
+\DeclareSourcemap{ \maps{ \map{ \step[fieldset=annote,null] } } }
+
+\addbibresource{references.bib}
+\usepackage[colorlinks=true, citecolor=blue]{hyperref}
+
+
+
+\title{\LARGE \bf
+The Paper Title
+}
+
+\author{Alfred E. Neuman, Alber Einstein
+\thanks{A. E.\ Neuman, is with MAD University.}
+~\thanks{A.\ Einstein is with the University of Relativity.}
+}
 
 \begin{document}
+
 \maketitle
 
-\input{text}
+\input{abstract}
+\input{todo}
+\input{introduction}
+\input{relatedwork}
+\input{methodology}
+\input{experiments}
+\input{conclusion}
 
-\end{document}  
+\renewcommand*{\bibfont}{\small}
+\printbibliography
+
+\end{document}
