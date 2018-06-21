@@ -8,3 +8,8 @@ Requires:
 
 Optional: 
 Makefile uses [ltx2any](https://github.com/reitzig/ltx2any) for rendering PDF. Uncomment the pdflatex lines for simple rendering.
+
+
+## TODO
+* Add template tables 
+* Add template gridded figures
