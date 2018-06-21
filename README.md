@@ -1,4 +1,4 @@
-# latextemplate
+# IEEE Paper Template
 Simple latex template for writing IEEE papers and related two-column latex documents using Markdown with a Makefile to convert to Latex.
 
 Requires: 
