@@ -1,6 +1,6 @@
 \begin{abstract}
 
-THIS IS THE ABSTRACT.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec mollis sapien, vel consectetur tellus. Donec bibendum cursus quam at convallis. Nunc tempus varius rutrum. Vestibulum ultrices vehicula arcu, sit amet ultrices libero maximus quis.
 
 \end{abstract} 
 
